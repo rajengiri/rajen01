@@ -1,10 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function Logo({ inverted = false }: { inverted?: boolean }) {
   return (
     <Link href="/" className={`logo ${inverted ? "logo-inverted" : ""}`} aria-label="Digital Rajen home">
-      <span className="logo-mark" aria-hidden="true"><span>DR</span></span>
-      <span className="logo-type"><strong>Digital Rajen</strong><small>AI Marketing & Growth</small></span>
+      <Image
+        className="logo-image"
+        src="/digital-rajen-growth-logo.png"
+        alt="Digital Rajen"
+        width={2170}
+        height={725}
+        priority
+        sizes="(max-width: 560px) 132px, 164px"
+      />
     </Link>
   );
 }

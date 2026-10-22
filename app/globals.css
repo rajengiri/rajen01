@@ -202,7 +202,8 @@ img, svg { max-width: 100%; }
 
 .site-header { position: sticky; top: 0; z-index: 100; background: rgb(255 255 255 / 91%); backdrop-filter: blur(16px); border-bottom: 1px solid rgb(220 227 233 / 80%); }
 .nav-shell { min-height: 78px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 2rem; }
-.logo { display: inline-flex; align-items: center; gap: .72rem; width: max-content; }
+.logo { display: inline-flex; align-items: center; width: max-content; }
+.logo-image { display: block; width: 164px; height: auto; object-fit: contain; }
 .logo-mark { width: 40px; height: 40px; border-radius: 12px 12px 4px 12px; display: grid; place-items: center; background: var(--ink); color: var(--lime); font-weight: 900; font-size: .76rem; box-shadow: inset -8px -8px 20px rgb(22 93 255 / 24%); }
 .logo-type { display: flex; flex-direction: column; line-height: 1.15; }
 .logo-type strong { font-size: .96rem; letter-spacing: -.02em; }
@@ -331,8 +332,7 @@ img, svg { max-width: 100%; }
 
 .site-footer { background: #04131f; color: white; padding-top: 4.8rem; }
 .footer-main { display: grid; grid-template-columns: 1.8fr .7fr 1fr 1fr; gap: 3rem; padding-bottom: 4rem; }
-.logo-inverted .logo-mark { background: white; color: var(--blue); }
-.logo-inverted .logo-type small { color: #8ea3b3; }
+.logo-inverted .logo-image { width: 190px; }
 .footer-intro p { color: #8ea3b3; max-width: 360px; font-size: .85rem; margin: 1.3rem 0; }
 .footer-cta { display: inline-flex; gap: .5rem; align-items: center; color: var(--cyan); font-size: .82rem; font-weight: 800; }
 .footer-main > div:not(.footer-intro) { display: flex; flex-direction: column; gap: .65rem; }
@@ -558,7 +558,8 @@ img, svg { max-width: 100%; }
 @media (max-width: 560px) {
   :root { --section-space: 4.5rem; }
   .container { width: min(100% - 28px, 520px); }
-  .logo-type small { display: none; }
+  .logo-image { width: 132px; }
+  .logo-inverted .logo-image { width: 170px; }
   .home-hero { padding-top: 3.5rem; }
   .hero-copy h1 { font-size: clamp(3rem, 15vw, 4.25rem); }
   .hero-actions { flex-direction: column; }

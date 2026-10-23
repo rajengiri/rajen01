@@ -9,11 +9,11 @@ const manrope = Manrope({ subsets: ["latin"], display: "swap", variable: "--font
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.websiteUrl),
-  title: { default: "Digital Rajen | AI Marketing Expert", template: "%s | Digital Rajen" },
+  title: { default: "Digital Rajen | Get More Leads, Customers & Sales", template: "%s | Digital Rajen" },
   description: siteConfig.description,
   alternates: { canonical: "/" },
-  openGraph: { title: "Digital Rajen | AI Marketing Expert", description: siteConfig.description, url: "/", siteName: "Digital Rajen", type: "website", locale: "en_US" },
-  twitter: { card: "summary_large_image", title: "Digital Rajen | AI Marketing Expert", description: siteConfig.description },
+  openGraph: { title: "Digital Rajen | Get More Leads, Customers & Sales", description: siteConfig.description, url: "/", siteName: "Digital Rajen", type: "website", locale: "en_US" },
+  twitter: { card: "summary_large_image", title: "Digital Rajen | Get More Leads, Customers & Sales", description: siteConfig.description },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 

@@ -288,7 +288,7 @@ img, svg { max-width: 100%; }
 .benefit-grid p { color: var(--body); font-size: .82rem; margin: 0; }
 .process-section { background: var(--warm); }
 .process-intro { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
-.process-list { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 3.5rem; }
+.process-list { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 3.5rem; }
 .process-list article { position: relative; padding: 1.5rem 2.5rem 1.5rem 0; display: flex; gap: 1rem; }
 .process-list article > span { color: var(--blue); font-size: .72rem; font-weight: 800; }
 .process-list article > svg { position: absolute; right: .7rem; top: 2rem; color: #acb8c1; }
@@ -334,6 +334,7 @@ img, svg { max-width: 100%; }
 .footer-main { display: grid; grid-template-columns: 1.8fr .7fr 1fr 1fr; gap: 3rem; padding-bottom: 4rem; }
 .logo-inverted .logo-image { width: 190px; }
 .footer-intro p { color: #8ea3b3; max-width: 360px; font-size: .85rem; margin: 1.3rem 0; }
+.footer-intro > strong { display: block; max-width: 360px; margin: 0 0 1.15rem; color: white; font-size: .8rem; line-height: 1.55; }
 .footer-cta { display: inline-flex; gap: .5rem; align-items: center; color: var(--cyan); font-size: .82rem; font-weight: 800; }
 .footer-main > div:not(.footer-intro) { display: flex; flex-direction: column; gap: .65rem; }
 .footer-main h2 { color: #7f93a2; font-size: .67rem; text-transform: uppercase; letter-spacing: .13em; margin: .45rem 0 .8rem; }

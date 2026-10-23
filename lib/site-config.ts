@@ -5,7 +5,7 @@ export const siteConfig = {
   professionalTitle: "AI Marketing Expert",
   description:
     "Helping small and medium businesses generate more leads, attract more customers, and grow with AI-powered digital marketing.",
-  email: "[YOUR EMAIL]",
+  email: "rajen.digitalmkt@gmail.com",
   phone: "[YOUR PHONE]",
   websiteUrl: "https://digital-rajen-growth-studio.karlieroberts.chatgpt.site",
   consultationUrl: "/contact?intent=consultation",

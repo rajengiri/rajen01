@@ -8,7 +8,7 @@ export const siteConfig = {
   email: "rajen.digitalmkt@gmail.com",
   phone: "[YOUR PHONE]",
   websiteUrl: "https://digital-rajen-growth-studio.karlieroberts.chatgpt.site",
-  consultationUrl: "/contact#contact-form",
+  consultationUrl: "/contact",
   externalConsultationUrl: "[YOUR CONSULTATION BOOKING URL]",
   social: {
     linkedin: "[YOUR LINKEDIN URL]",

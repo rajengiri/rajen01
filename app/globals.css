@@ -568,6 +568,7 @@ img, svg { max-width: 100%; }
 .form-status.success { background: #eaf9f2; color: #08734c; }
 .submit-button { width: 100%; }
 .form-disclaimer { color: var(--muted); line-height: 1.5; }
+.formsubmit-target { display: none; width: 0; height: 0; border: 0; }
 .spin { animation: spin 1s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 

@@ -286,15 +286,16 @@ img, svg { max-width: 100%; }
 .mobile-panel { display: none; }
 
 .home-hero { background: linear-gradient(130deg, #fbfaf6 0%, #f7f9fc 63%, #eef4ff 100%); position: relative; overflow: hidden; padding: clamp(4rem, 7vw, 7rem) 0 0; }
-.home-hero::before { content: ""; position: absolute; width: 520px; height: 520px; right: -180px; top: -230px; border-radius: 50%; border: 80px solid rgb(123 217 232 / 13%); }
-.hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.13fr) minmax(380px, .87fr); align-items: center; gap: clamp(3rem, 6vw, 6rem); padding-bottom: 5rem; }
+.home-hero::before { content: ""; position: absolute; width: 520px; height: 520px; right: -180px; top: -230px; border-radius: 50%; border: 80px solid rgb(123 217 232 / 13%); pointer-events: none; }
+.hero-grid { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 1.13fr) minmax(380px, .87fr); align-items: center; gap: clamp(3rem, 6vw, 6rem); padding-bottom: 5rem; }
+.hero-copy { position: relative; z-index: 10; }
 .hero-copy h1 { font-size: clamp(3.4rem, 6.3vw, 6.25rem); line-height: .96; letter-spacing: -.065em; margin: 0; font-weight: 780; }
 .hero-copy h1 em { font-family: Georgia, serif; font-weight: 400; color: var(--blue); }
 .hero-lead { max-width: 690px; margin: 1.7rem 0 0; font-size: clamp(1.04rem, 1.5vw, 1.25rem); color: var(--body); line-height: 1.7; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+.hero-actions { position: relative; z-index: 20; display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; pointer-events: auto; }
 .hero-trust { margin: 1.2rem 0 0; color: var(--body); display: flex; align-items: center; gap: .55rem; font-size: .83rem; }
 .hero-trust svg { color: #16865e; flex: 0 0 auto; }
-.hero-visual { position: relative; min-height: 590px; }
+.hero-visual { position: relative; z-index: 1; min-height: 590px; pointer-events: none; }
 .portrait-card { position: relative; width: min(100%, 430px); margin-left: auto; background: var(--ink); border-radius: 160px 20px 20px 20px; padding: 14px; box-shadow: var(--shadow-lg); transform: rotate(1.2deg); }
 .portrait-placeholder { height: 420px; border-radius: 148px 12px 12px 12px; background: radial-gradient(circle at 50% 20%, #d8eff4, #a8c8d5 45%, #35546a 46%, #10293e 75%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; position: relative; overflow: hidden; }
 .portrait-placeholder::after { content: ""; position: absolute; width: 240px; height: 240px; border: 1px solid rgb(255 255 255 / 25%); border-radius: 50%; bottom: -70px; }

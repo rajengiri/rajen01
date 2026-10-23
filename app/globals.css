@@ -302,9 +302,7 @@ img, svg { max-width: 100%; }
 .professional-photo { object-fit: cover; }
 .professional-photo-mountain { object-position: left center; }
 .professional-photo-office { object-position: right center; }
-.home-hero .professional-photo { object-position: left center; }
-.home-hero .portrait-card::after { content: ""; position: absolute; z-index: 6; top: 26px; right: -38px; width: 178px; height: 218px; border: 7px solid white; border-radius: 18px 64px 18px 18px; background: #dce6ec url("/rajen-office-portrait.png") right center / auto 204px no-repeat; box-shadow: 0 20px 48px rgb(7 26 43 / 24%); transform: rotate(3deg); transition: transform .35s cubic-bezier(.2,.75,.25,1), box-shadow .35s; }
-.home-hero .portrait-card:hover::after { transform: rotate(0) translateY(-6px); box-shadow: 0 28px 60px rgb(7 26 43 / 28%); }
+.home-hero .professional-photo { object-position: right center; }
 .portrait-initials { position: relative; z-index: 1; display: grid; place-items: center; width: 96px; height: 96px; border-radius: 50%; border: 1px solid rgb(255 255 255 / 40%); background: rgb(7 26 43 / 42%); font-size: 1.5rem; font-weight: 800; }
 .portrait-brand-image { position: relative; z-index: 1; display: block; width: min(220px, 72%); height: auto; object-fit: contain; filter: drop-shadow(0 12px 24px rgb(0 0 0 / 25%)); }
 .portrait-placeholder > span { position: relative; z-index: 1; margin-top: 1rem; padding: .45rem .7rem; border-radius: 7px; background: rgb(7 26 43 / 65%); font-size: .68rem; letter-spacing: .06em; }
@@ -646,7 +644,6 @@ img, svg { max-width: 100%; }
   .hero-visual { min-height: 470px; }
   .portrait-card { width: calc(100% - 16px); }
   .portrait-placeholder { height: 340px; }
-  .home-hero .portrait-card::after { top: 18px; right: -4px; width: 132px; height: 158px; border-width: 5px; border-radius: 14px 46px 14px 14px; background-size: auto 148px; }
   .result-card { min-width: 175px; padding: .65rem; }
   .result-card-top { left: -5px; top: 45px; }
   .result-card-bottom { right: -4px; bottom: 18px; }

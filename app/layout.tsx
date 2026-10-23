@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
+import { ScrollExperience } from "@/components/site/scroll-experience";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -22,5 +23,5 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const logoUrl = `${siteConfig.websiteUrl}${siteConfig.logoPath}`;
   const schema = { "@context": "https://schema.org", "@graph": [{ "@type": "WebSite", name: "Digital Rajen", url: siteConfig.websiteUrl, description: siteConfig.description, image: logoUrl }, { "@type": ["Person", "ProfessionalService"], name: siteConfig.personName, alternateName: siteConfig.brandName, url: siteConfig.websiteUrl, description: siteConfig.description, jobTitle: siteConfig.professionalTitle, logo: logoUrl, image: logoUrl }] };
-  return <html lang="en"><body className={manrope.variable}><a href="#main-content" className="skip-link">Skip to main content</a><Header /><main id="main-content">{children}</main><Footer /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /></body></html>;
+  return <html lang="en"><body className={manrope.variable}><a href="#main-content" className="skip-link">Skip to main content</a><ScrollExperience /><Header /><main id="main-content">{children}</main><Footer /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /></body></html>;
 }

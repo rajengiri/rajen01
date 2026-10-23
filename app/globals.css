@@ -550,6 +550,7 @@ img, svg { max-width: 100%; }
 .privacy-note { display: flex; gap: .5rem; color: var(--muted); font-size: .68rem; margin-top: 1.1rem; }
 .privacy-note svg { width: 17px; flex: 0 0 auto; }
 .contact-form { padding: clamp(1.6rem,4vw,2.7rem); border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--paper); display: grid; gap: 1rem; }
+#contact-form { scroll-margin-top: 110px; }
 .form-heading > span { color: var(--blue); font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
 .form-heading h2 { margin: .25rem 0; font-size: 2rem; letter-spacing: -.04em; }
 .form-heading p { color: var(--body); margin: 0 0 1rem; font-size: .82rem; }

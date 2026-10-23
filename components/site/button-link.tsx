@@ -6,6 +6,5 @@ export function ButtonLink({ href, children, variant = "primary", className = ""
   const classes = `button button-${variant} ${className}`;
   const content = <>{children}<ArrowUpRight aria-hidden="true" size={17} /></>;
   if (external) return <a className={classes} href={href} target="_blank" rel="noreferrer">{content}</a>;
-  if (href.includes("#")) return <a className={classes} href={href}>{content}</a>;
-  return <Link className={classes} href={href}>{content}</Link>;
+  return <Link className={classes} href={href} prefetch>{content}</Link>;
 }

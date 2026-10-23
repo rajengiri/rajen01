@@ -1,7 +1,7 @@
 "use client";
 
 import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { siteConfig } from "@/lib/site-config";
 
 type Status = { type: "idle"|"loading"|"success"|"error"; message?: string };
@@ -10,6 +10,7 @@ const formSubmitEndpoint=`https://formsubmit.co/ajax/${siteConfig.email}`;
 
 export function ContactForm(){
   const [form,setForm]=useState(initial); const [status,setStatus]=useState<Status>({type:"idle"}); const [errors,setErrors]=useState<Record<string,string>>({});
+  useEffect(()=>{if(window.location.hash!=="#contact-form")return; const scroll=()=>document.getElementById("contact-form")?.scrollIntoView({block:"start"}); const frame=window.requestAnimationFrame(scroll); const timer=window.setTimeout(scroll,180); return()=>{window.cancelAnimationFrame(frame);window.clearTimeout(timer);};},[]);
   function update(name:string,value:string){setForm((p)=>({...p,[name]:value})); if(errors[name])setErrors((p)=>({...p,[name]:""}));}
   async function submit(e:FormEvent){e.preventDefault(); const next:Record<string,string>={}; if(form.name.trim().length<2)next.name="Please enter your name."; if(!/^\S+@\S+\.\S+$/.test(form.email))next.email="Enter a valid email address."; if(!form.company.trim())next.company="Please enter your business name."; if(!form.need)next.need="Choose an area you need help with."; if(form.message.trim().length<20)next.message="Please share at least 20 characters so I can prepare."; setErrors(next); if(Object.keys(next).length){setStatus({type:"error",message:"Please review the highlighted fields."});return;} setStatus({type:"loading"}); try{const res=await fetch(formSubmitEndpoint,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({name:form.name,email:form.email,_replyto:form.email,phone:form.phone||"Not provided",company:form.company,website:form.website||"Not provided",need:form.need,message:form.message,_subject:`New Digital Rajen enquiry from ${form.name}`,_template:"table",_honey:form.companyFax})});const data=await res.json() as {success?:boolean|string;message?:string};if(!res.ok||data.success===false||data.success==="false")throw new Error(data.message||"Could not send your message.");setStatus({type:"success",message:"Thanks—your enquiry has been sent to Rajen. I’ll be in touch soon."});setForm(initial);}catch(error){setStatus({type:"error",message:error instanceof Error?error.message:`Could not send your message. Please email ${siteConfig.email}.`});}}
   const field=(name:keyof typeof initial,label:string,required=false,type="text",placeholder="")=><label><span>{label}{required&&<i aria-hidden="true"> *</i>}</span><input type={type} name={name} value={form[name]} onChange={(e)=>update(name,e.target.value)} placeholder={placeholder} aria-invalid={!!errors[name]} aria-describedby={errors[name]?`${name}-error`:undefined} required={required}/>{errors[name]&&<small id={`${name}-error`} className="field-error"><AlertCircle size={14}/>{errors[name]}</small>}</label>;

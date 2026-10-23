@@ -232,6 +232,8 @@ img, svg { max-width: 100%; }
 .portrait-card { width: min(100%, 430px); margin-left: auto; background: var(--ink); border-radius: 160px 20px 20px 20px; padding: 14px; box-shadow: var(--shadow-lg); transform: rotate(1.2deg); }
 .portrait-placeholder { height: 420px; border-radius: 148px 12px 12px 12px; background: radial-gradient(circle at 50% 20%, #d8eff4, #a8c8d5 45%, #35546a 46%, #10293e 75%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; position: relative; overflow: hidden; }
 .portrait-placeholder::after { content: ""; position: absolute; width: 240px; height: 240px; border: 1px solid rgb(255 255 255 / 25%); border-radius: 50%; bottom: -70px; }
+.portrait-placeholder.has-photo::after { display: none; }
+.professional-photo { object-fit: cover; object-position: right center; }
 .portrait-initials { position: relative; z-index: 1; display: grid; place-items: center; width: 96px; height: 96px; border-radius: 50%; border: 1px solid rgb(255 255 255 / 40%); background: rgb(7 26 43 / 42%); font-size: 1.5rem; font-weight: 800; }
 .portrait-brand-image { position: relative; z-index: 1; display: block; width: min(220px, 72%); height: auto; object-fit: contain; filter: drop-shadow(0 12px 24px rgb(0 0 0 / 25%)); }
 .portrait-placeholder > span { position: relative; z-index: 1; margin-top: 1rem; padding: .45rem .7rem; border-radius: 7px; background: rgb(7 26 43 / 65%); font-size: .68rem; letter-spacing: .06em; }

@@ -1,14 +1,18 @@
 import Image from "next/image";
 
-export function ProfessionalPhoto({ priority = false }: { priority?: boolean }) {
+type PhotoVariant = "mountain" | "office";
+
+export function ProfessionalPhoto({ priority = false, variant = "office" }: { priority?: boolean; variant?: PhotoVariant }) {
+  const isOffice = variant === "office";
+
   return (
     <Image
-      className="professional-photo"
+      className={`professional-photo professional-photo-${variant}`}
       src="/rajen-office-portrait.png"
-      alt="Rajendra in a professional office setting"
+      alt={isOffice ? "Rajendra working in a professional office" : "Rajendra with a mountain landscape"}
       fill
       priority={priority}
-      sizes="(max-width: 820px) 430px, 38vw"
+      sizes={isOffice ? "(max-width: 560px) 138px, 178px" : "(max-width: 820px) 430px, 38vw"}
     />
   );
 }

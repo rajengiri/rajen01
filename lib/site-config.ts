@@ -1,5 +1,6 @@
 export const siteConfig = {
   brandName: "Digital Rajen",
+  logoPath: "/digital-rajen-growth-logo.png",
   personName: "[Your Name]",
   professionalTitle: "AI Marketing Expert",
   description:

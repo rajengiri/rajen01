@@ -4,15 +4,20 @@ type PhotoVariant = "mountain" | "office";
 
 export function ProfessionalPhoto({ priority = false, variant = "office" }: { priority?: boolean; variant?: PhotoVariant }) {
   const isOffice = variant === "office";
+  const src = isOffice ? "/rajen-office-portrait-cropped.png" : "/rajen-mountain-portrait.png";
+  const sizes = isOffice
+    ? "(max-width: 560px) min(calc(100vw - 72px), 476px), 402px"
+    : "(max-width: 560px) min(calc(100vw - 50px), 408px), 408px";
 
   return (
     <Image
       className={`professional-photo professional-photo-${variant}`}
-      src="/rajen-office-portrait.png"
+      src={src}
       alt={isOffice ? "Rajendra working in a professional office" : "Rajendra with a mountain landscape"}
       fill
       priority={priority}
-      sizes={isOffice ? "(max-width: 560px) 138px, 178px" : "(max-width: 820px) 430px, 38vw"}
+      quality={88}
+      sizes={sizes}
     />
   );
 }
